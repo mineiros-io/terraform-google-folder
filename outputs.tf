@@ -10,6 +10,11 @@ output "google_folder" {
   value       = try(google_folder.folder[0], {})
 }
 
+output "iam" {
+  description = "The resources created by `mineiros-io/folder-iam/google` module."
+  value       = local.iam
+}
+
 # ------------------------------------------------------------------------------
 # OUTPUT ALL INPUT VARIABLES
 # ------------------------------------------------------------------------------
