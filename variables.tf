@@ -23,7 +23,11 @@ variable "parent" {
 # These variables have defaults, but may be overridden.
 # ---------------------------------------------------------------------------------------------------------------------
 
-
+variable "iam" {
+  type        = any
+  description = "(Optional) List of IAM roles and members to set for the created project."
+  default     = []
+}
 
 # ------------------------------------------------------------------------------
 # MODULE CONFIGURATION PARAMETERS
