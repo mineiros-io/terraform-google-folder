@@ -91,8 +91,7 @@ section {
         }
 
         variable "module_depends_on" {
-          type           = any
-          readme_type    = "list(dependencies)"
+          type           = list(dependency)
           description    = <<-END
             A list of dependencies. Any object can be _assigned_ to this list to define a hidden external dependency.
           END
@@ -124,8 +123,7 @@ section {
         }
 
         variable "iam" {
-          type           = any
-          readme_type    = "list(iam)"
+          type           = list(iam)
           default        = []
           description    = <<-END
             A list of IAM access.

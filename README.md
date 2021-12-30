@@ -67,7 +67,7 @@ See [variables.tf] and [examples/] for details and use-cases.
 
   Default is `true`.
 
-- [**`module_depends_on`**](#var-module_depends_on): *(Optional `list(dependencies)`)*<a name="var-module_depends_on"></a>
+- [**`module_depends_on`**](#var-module_depends_on): *(Optional `list(dependency)`)*<a name="var-module_depends_on"></a>
 
   A list of dependencies. Any object can be _assigned_ to this list to define a hidden external dependency.
 
@@ -104,9 +104,9 @@ See [variables.tf] and [examples/] for details and use-cases.
   }]
   ```
 
-  The object accepts the following attributes:
+  Each `iam` object in the list accepts the following attributes:
 
-  - [**`members`**](#attr-members-iam): *(Optional `set(string)`)*<a name="attr-members-iam"></a>
+  - [**`members`**](#attr-iam-members): *(Optional `set(string)`)*<a name="attr-iam-members"></a>
 
     Identities that will be granted the privilege in role. Each entry can have one of the following values:
     - `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account.
@@ -118,11 +118,11 @@ See [variables.tf] and [examples/] for details and use-cases.
 
     Default is `[]`.
 
-  - [**`role`**](#attr-role-iam): *(Optional `string`)*<a name="attr-role-iam"></a>
+  - [**`role`**](#attr-iam-role): *(Optional `string`)*<a name="attr-iam-role"></a>
 
     The role that should be applied. Note that custom roles must be of the format `[projects|organizations]/{parent-name}/roles/{role-name}`.
 
-  - [**`authoritative`**](#attr-authoritative-iam): *(Optional `bool`)*<a name="attr-authoritative-iam"></a>
+  - [**`authoritative`**](#attr-iam-authoritative): *(Optional `bool`)*<a name="attr-iam-authoritative"></a>
 
     Whether to exclusively set (authoritative mode) or add (non-authoritative/additive mode) members to the role.
 
