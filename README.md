@@ -144,6 +144,9 @@ The following attributes are exported in the outputs of the module:
 
   The resource created by `mineiros-io/folder-iam/google` module.
 
+- **`iam`**
+  The resource created by `mineiros-io/folder-iam/google` module.
+
 ## External Documentation
 
 ### Google Documentation
