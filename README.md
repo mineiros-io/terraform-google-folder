@@ -132,15 +132,16 @@ See [variables.tf] and [examples/] for details and use-cases.
 
 The following attributes are exported in the outputs of the module:
 
-- **`module_enabled`**
+- [**`module_enabled`**](#output-module_enabled): *(`bool`)*<a name="output-module_enabled"></a>
 
   Whether this module is enabled.
 
-- **`google_folder`**
+- [**`google_folder`**](#output-google_folder): *(`object(google_folder)`)*<a name="output-google_folder"></a>
 
-  The outputs of the create google folder.
+  The resource created by `google_folder` module.
 
-- **`iam`**
+- [**`iam`**](#output-iam): *(`object(iam)`)*<a name="output-iam"></a>
+
   The resource created by `mineiros-io/folder-iam/google` module.
 
 ## External Documentation

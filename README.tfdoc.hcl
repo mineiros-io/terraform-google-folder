@@ -172,18 +172,28 @@ section {
     title   = "Module Outputs"
     content = <<-END
       The following attributes are exported in the outputs of the module:
-
-      - **`module_enabled`**
-
-        Whether this module is enabled.
-
-      - **`google_folder`**
-
-        The outputs of the create google folder.
-
-      - **`iam`**
-        The resource created by `mineiros-io/folder-iam/google` module.
     END
+
+    output "module_enabled" {
+      type        = bool
+      description = <<-END
+        Whether this module is enabled.
+      END
+    }
+
+    output "google_folder" {
+      type        = object(google_folder)
+      description = <<-END
+        The resource created by `google_folder` module.
+      END
+    }
+
+    output "iam" {
+      type        = object(iam)
+      description = <<-END
+        The resource created by `mineiros-io/folder-iam/google` module.
+      END
+    }
   }
 
   section {
