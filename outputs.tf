@@ -12,5 +12,5 @@ output "google_folder" {
 
 output "iam" {
   description = "The resources created by `mineiros-io/folder-iam/google` module."
-  value       = local.iam
+  value       = module.iam
 }
