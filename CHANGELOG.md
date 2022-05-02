@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add test suite
 - Add support for multiple or no conditions on single IAM roles
 
+### Fixed
+
+- Fix references when module_enabled == false
+
 ### Removed
 
 - BREAKING CHANGE: Remove support for Terraform before v1.0
