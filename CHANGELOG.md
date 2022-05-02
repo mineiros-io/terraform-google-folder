@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add test suite
 
+### Removed
+
+- BREAKING CHANGE: Remove support for Terraform before v1.0
+- BREAKING CHANGE: Remove support for Terraform Google Provider before v4.0
+
 ## [0.1.1]
 
 ### Added
