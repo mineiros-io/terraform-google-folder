@@ -14,16 +14,3 @@ output "iam" {
   description = "The resources created by `mineiros-io/folder-iam/google` module."
   value       = local.iam
 }
-
-# ------------------------------------------------------------------------------
-# OUTPUT ALL INPUT VARIABLES
-# ------------------------------------------------------------------------------
-
-# ------------------------------------------------------------------------------
-# OUTPUT MODULE CONFIGURATION
-# ------------------------------------------------------------------------------
-
-output "module_enabled" {
-  description = "Whether the module is enabled."
-  value       = var.module_enabled
-}
