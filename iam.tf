@@ -22,7 +22,7 @@ module "iam" {
   module_enabled    = var.module_enabled
   module_depends_on = [var.module_depends_on]
 
-  folder = google_folder.folder[0].name
+  folder = try(google_folder.folder[0].name, null)
 
   role = each.key
 

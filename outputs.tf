@@ -7,7 +7,7 @@
 # ------------------------------------------------------------------------------
 output "google_folder" {
   description = "The outputs of the create google folder"
-  value       = try(google_folder.folder[0], {})
+  value       = one(google_folder.folder)
 }
 
 output "iam" {
