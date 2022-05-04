@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fix references when module_enabled == false
+- Fix references when `module_enabled = false`
 
 ### Removed
 
