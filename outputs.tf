@@ -7,23 +7,10 @@
 # ------------------------------------------------------------------------------
 output "google_folder" {
   description = "The outputs of the create google folder"
-  value       = try(google_folder.folder[0], {})
+  value       = one(google_folder.folder)
 }
 
 output "iam" {
   description = "The resources created by `mineiros-io/folder-iam/google` module."
-  value       = local.iam
-}
-
-# ------------------------------------------------------------------------------
-# OUTPUT ALL INPUT VARIABLES
-# ------------------------------------------------------------------------------
-
-# ------------------------------------------------------------------------------
-# OUTPUT MODULE CONFIGURATION
-# ------------------------------------------------------------------------------
-
-output "module_enabled" {
-  description = "Whether the module is enabled."
-  value       = var.module_enabled
+  value       = module.iam
 }
