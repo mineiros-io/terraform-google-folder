@@ -24,7 +24,7 @@ module "iam" {
 
   folder = try(google_folder.folder[0].name, null)
 
-  role = each.key
+  role = each.value.role
 
   members       = try(each.value.members, [])
   condition     = try(each.value.condition, null)
