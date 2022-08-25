@@ -61,9 +61,9 @@ section {
 
       ```hcl
       module "terraform-google-folder" {
-        source = "github.com/mineiros-io/terraform-google-folder.git?ref=v0.2.0"
+        source = "github.com/mineiros-io/terraform-google-folder.git?ref=v0.1.1"
 
-        display name = "example-folder"
+        display_name = "example-folder"
         parent       = "organizations/1234567"
       }
       ```
