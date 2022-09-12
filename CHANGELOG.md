@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0]
+
+### Added
+
+- Add support for `var.computed_members_map`
+
 ## [0.2.0]
 
 ### Added
@@ -16,19 +22,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fix references when `module_enabled = false`
+- Fix references when `var.module_enabled = false`
 
 ### Removed
 
 - BREAKING CHANGE: Remove support for Terraform before v1.0
 - BREAKING CHANGE: Remove support for Terraform Google Provider before v4.0
-- BREAKING CHANGE: Remove `module_enabled` output
+- BREAKING CHANGE: Remove `var.module_enabled` output
 
 ## [0.1.1]
 
 ### Added
 
-- Support for provider 4.x
+- Support for Terraform Google Provider version 4.x
 
 ## [0.1.0]
 
@@ -44,7 +50,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- markdown-link-check-disable -->
 
-[unreleased]: https://github.com/mineiros-io/terraform-google-folder/compare/v0.2.0...HEAD
+[unreleased]: https://github.com/mineiros-io/terraform-google-folder/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/mineiros-io/terraform-google-folder/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/mineiros-io/terraform-google-folder/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/mineiros-io/terraform-google-folder/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/mineiros-io/terraform-google-folder/compare/v0.0.1...v0.1.0

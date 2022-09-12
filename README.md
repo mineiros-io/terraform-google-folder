@@ -46,7 +46,7 @@ Most basic usage just setting required arguments:
 
 ```hcl
 module "terraform-google-folder" {
-  source = "github.com/mineiros-io/terraform-google-folder.git?ref=v0.1.1"
+  source = "github.com/mineiros-io/terraform-google-folder.git?ref=v0.2.0"
 
   display_name = "example-folder"
   parent       = "organizations/1234567"
