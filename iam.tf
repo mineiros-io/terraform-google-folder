@@ -7,15 +7,17 @@ locals {
     [for role in iam.roles : merge(iam, { role = role })] if can(iam.roles)
   ])
 
+  # we allow to define role and roles in the same object and concatenate them
+  # each role can only be specified exactly once
   iam = concat(local.iam_role, local.iam_roles)
 
-  iam_map = { for iam in local.iam :
-    try(iam._key, "${iam.role}/${iam.condition._key}", "${iam.role}/${md5(jsonencode(iam.condition))}", iam.role) => iam
+  iam_map = { for idx, iam in local.iam :
+    try(iam._key, "${iam.role}/${iam.condition._key}", "${iam.role}/${md5(jsonencode(iam.condition))}", iam.role) => idx
   }
 }
 
 module "iam" {
-  source = "github.com/mineiros-io/terraform-google-folder-iam.git?ref=v0.0.2"
+  source = "github.com/mineiros-io/terraform-google-folder-iam.git?ref=v0.1.0"
 
   for_each = local.iam_map
 
@@ -24,9 +26,9 @@ module "iam" {
 
   folder = try(google_folder.folder[0].name, null)
 
-  role = each.value.role
+  role = local.iam[each.value].role
 
-  members       = try(each.value.members, [])
-  condition     = try(each.value.condition, null)
-  authoritative = try(each.value.authoritative, true)
+  members       = try(local.iam[each.value].members, [])
+  condition     = try(local.iam[each.value].condition, null)
+  authoritative = try(local.iam[each.value].authoritative, true)
 }
