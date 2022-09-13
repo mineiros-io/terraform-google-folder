@@ -46,7 +46,7 @@ Most basic usage just setting required arguments:
 
 ```hcl
 module "terraform-google-folder" {
-  source = "github.com/mineiros-io/terraform-google-folder.git?ref=v0.1.1"
+  source = "github.com/mineiros-io/terraform-google-folder.git?ref=v0.2.0"
 
   display_name = "example-folder"
   parent       = "organizations/1234567"
@@ -115,6 +115,7 @@ See [variables.tf] and [examples/] for details and use-cases.
     - `serviceAccount:{emailid}`: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.
     - `group:{emailid}`: An email address that represents a Google group. For example, admins@example.com.
     - `domain:{domain}`: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
+    - `computed:{identifier}`: An existing key from `var.computed_members_map`.
 
     Default is `[]`.
 
@@ -127,6 +128,12 @@ See [variables.tf] and [examples/] for details and use-cases.
     Whether to exclusively set (authoritative mode) or add (non-authoritative/additive mode) members to the role.
 
     Default is `true`.
+
+- [**`computed_members_map`**](#var-computed_members_map): *(Optional `map(string)`)*<a name="var-computed_members_map"></a>
+
+  A map of members to replace in `members` of various IAM settings to handle terraform computed values.
+
+  Default is `{}`.
 
 ## Module Outputs
 

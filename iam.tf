@@ -17,7 +17,7 @@ locals {
 }
 
 module "iam" {
-  source = "github.com/mineiros-io/terraform-google-folder-iam.git?ref=v0.1.0"
+  source = "github.com/mineiros-io/terraform-google-folder-iam.git?ref=v0.2.0"
 
   for_each = local.iam_map
 
@@ -28,7 +28,9 @@ module "iam" {
 
   role = local.iam[each.value].role
 
-  members       = try(local.iam[each.value].members, [])
+  members              = try(local.iam[each.value].members, [])
+  computed_members_map = var.computed_members_map
+
   condition     = try(local.iam[each.value].condition, null)
   authoritative = try(local.iam[each.value].authoritative, true)
 }
