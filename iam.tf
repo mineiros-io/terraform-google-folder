@@ -17,7 +17,7 @@ locals {
 }
 
 module "iam" {
-  source = "github.com/mineiros-io/terraform-google-folder-iam.git?ref=v0.2.0"
+  source = "github.com/mineiros-io/terraform-google-folder-iam.git?ref=v0.3.0"
 
   for_each = local.iam_map
 
